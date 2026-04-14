@@ -1,0 +1,550 @@
+/* ================= CONTAINER GLOBAL ================= */
+
+.internal-container {
+  background:
+      /* vignette / gelap di pinggir */ radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.35) 70%,
+      rgba(0, 0, 0, 0.65) 100%
+    ),
+    /* glow merah kiri */
+      radial-gradient(
+        900px 520px at 12% 46%,
+        rgba(255, 50, 50, 0.55) 0%,
+        rgba(255, 50, 50, 0) 62%
+      ),
+    /* glow merah-oranye tengah */
+      radial-gradient(
+        880px 520px at 55% 40%,
+        rgba(255, 40, 40, 0.38) 0%,
+        rgba(255, 40, 40, 0) 66%
+      ),
+    /* glow merah bawah */
+      radial-gradient(
+        900px 560px at 62% 92%,
+        rgba(255, 50, 50, 0.55) 0%,
+        rgba(255, 50, 50, 0) 60%
+      ),
+    /* glow gelap kanan */
+      radial-gradient(
+        720px 520px at 88% 54%,
+        rgba(80, 0, 0, 0.35) 0%,
+        rgba(80, 0, 0, 0) 70%
+      ),
+    /* base merah gelap */
+      linear-gradient(180deg, #4a0000 0%, #2b0000 45%, #400000 100%) !important;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* ================= HERO SECTION ================= */
+
+.internal-hero {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.internal-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(0, 0, 0, 0.7) 70%
+    ),
+    linear-gradient(135deg, rgba(140, 16, 7, 0.9), rgba(40, 0, 0, 0.9));
+  mix-blend-mode: multiply;
+}
+
+.internal-hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #f9fafb;
+  padding: 2rem 1rem;
+}
+
+.internal-hero-title {
+  font-size: 3.25rem;
+  letter-spacing: 0.4em;
+  text-indent: 0.4em;
+  font-weight: 800;
+  margin: 0 0 0.75rem 0;
+}
+
+.internal-hero-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  max-width: 520px;
+  margin-inline: auto;
+  opacity: 0.85;
+}
+
+/* ================= TABS ================= */
+
+.internal-tabs-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1.5rem 0 1.5rem;
+}
+
+.internal-tabs-inner {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.internal-tabs {
+  display: inline-flex;
+  padding: 0.25rem;
+  background: rgba(15, 23, 42, 0.75);
+  border-radius: 9999px;
+  border: 1px solid rgba(248, 250, 252, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.internal-tab-btn {
+  border: none;
+  padding: 0.6rem 1.6rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.internal-tab-btn.active {
+  background: linear-gradient(135deg, #f97373, #ef4444);
+  color: #111827;
+  box-shadow: 0 10px 20px -10px rgba(248, 113, 113, 0.7);
+}
+
+.internal-tab-btn:not(.active):hover {
+  color: #f9fafb;
+  background: rgba(248, 250, 252, 0.05);
+}
+
+/* ================= TAB CONTENT + ANIMASI ================= */
+
+.internal-tab-content {
+  /* wrapper animasi */
+}
+
+.internal-tab-content-anggota .internal-content {
+  animation: internalSlideInFromLeft 0.35s ease forwards;
+}
+
+.internal-tab-content-deskripsi .internal-content {
+  animation: internalSlideInFromRight 0.35s ease forwards;
+}
+
+@keyframes internalSlideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes internalSlideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ================= CONTENT SECTION ================= */
+
+.internal-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 5rem 1.5rem;
+}
+
+/* BARIS 1: Manager & Assistant Manager */
+.internal-leaders-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.internal-card-leader {
+  transform-origin: center bottom;
+}
+
+/* BARIS 2: 4 Supervisor */
+.internal-supervisors-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+  margin-bottom: 3rem;
+}
+
+/* BARIS 3: 1 Supervisor (tengah) */
+.internal-supervisors-row-single {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/* STAFF: 4 per baris */
+.internal-staff-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+/* ================= CARD BASE + FLIP ================= */
+
+.internal-card {
+  width: 280px;
+  height: 420px;
+  perspective: 1200px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, margin-top 0.3s ease;
+}
+
+.internal-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Inner flip */
+.internal-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.internal-card.is-flipped .internal-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Face */
+.internal-card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.4);
+}
+
+/* FRONT */
+.internal-card-front {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.internal-image-wrapper {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.internal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.internal-card:hover .internal-image {
+  transform: scale(1.05);
+}
+
+.internal-info {
+  padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+  text-align: center;
+}
+
+.internal-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.internal-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #8c1007, #e62727);
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.internal-major {
+  color: #4b5563;
+  font-weight: 500;
+  margin: 0.15rem 0;
+  font-size: 0.9rem;
+}
+
+.internal-year {
+  color: #9ca3af;
+  margin: 0.15rem 0 0 0;
+  font-size: 0.85rem;
+}
+
+/* BACK */
+.internal-card-back {
+  background: radial-gradient(
+    circle at 0% 0%,
+    #f97373 0%,
+    #7f1d1d 45%,
+    #111827 100%
+  );
+  color: #f9fafb;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.internal-back-content {
+  padding: 1.8rem 1.6rem;
+  text-align: left;
+}
+
+.internal-back-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin: 0 0 0.75rem 0;
+}
+
+.internal-back-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+}
+
+.internal-back-position {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0 0 1.25rem 0;
+}
+
+.internal-back-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
+}
+
+.internal-back-footer {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* ================= DESKRIPSI JABATAN ================= */
+
+.internal-description {
+  border-radius: 1.5rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(248, 250, 252, 0.06);
+  box-shadow: 0 24px 55px -24px rgba(0, 0, 0, 0.9);
+  padding: 2rem 2rem 1.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.internal-description::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #f97373, #ef4444, #b91c1c);
+}
+
+.internal-desc-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 230px) minmax(0, 1fr);
+  column-gap: 2.5rem;
+  row-gap: 0.4rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.internal-desc-row:last-child {
+  border-bottom: none;
+}
+
+.internal-desc-role-col {
+  padding-left: 0.75rem;
+}
+
+.internal-desc-role-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.internal-desc-highlight {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  color: #fecaca;
+  opacity: 0.95;
+}
+
+.internal-desc-text-col {
+  color: #e5e7eb;
+}
+
+.internal-desc-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+.internal-desc-row-1 {
+  padding-top: 0.8rem;
+}
+.internal-desc-row-4 {
+  padding-bottom: 0.8rem;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
+  .internal-hero {
+    height: 280px;
+  }
+
+  .internal-hero-title {
+    font-size: 2.6rem;
+    letter-spacing: 0.3em;
+  }
+
+  .internal-content {
+    padding: 2.5rem 1.25rem 4rem 1.25rem;
+  }
+
+  .internal-description {
+    padding-inline: 1.6rem;
+  }
+
+  .internal-desc-row {
+    column-gap: 2rem;
+  }
+
+  .internal-supervisors-row,
+  .internal-staff-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .internal-hero {
+    height: 240px;
+  }
+
+  .internal-hero-title {
+    font-size: 2rem;
+    letter-spacing: 0.25em;
+  }
+
+  .internal-hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .internal-tabs-wrapper {
+    padding-inline: 1.25rem;
+  }
+
+  .internal-tabs-inner {
+    max-width: 100%;
+  }
+
+  .internal-tabs {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .internal-tab-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .internal-leaders-row {
+    gap: 1.5rem;
+  }
+
+  .internal-card {
+    width: 100%;
+    max-width: 320px;
+    height: 380px;
+  }
+
+  .internal-image-wrapper {
+    height: 220px;
+  }
+
+  .internal-back-content {
+    padding: 1.6rem 1.4rem;
+  }
+
+  .internal-back-desc {
+    font-size: 0.9rem;
+  }
+
+  .internal-description {
+    padding: 1.6rem 1.5rem 1.4rem 1.5rem;
+  }
+
+  .internal-desc-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.6rem;
+  }
+
+  .internal-desc-role-col {
+    padding-left: 0.5rem;
+  }
+
+  .internal-supervisors-row,
+  .internal-staff-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

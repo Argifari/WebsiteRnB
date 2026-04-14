@@ -1,0 +1,534 @@
+/* =============== CONTAINER & HERO (sama seperti Director) =============== */
+
+.education-container {
+  min-height: 100vh;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.35) 70%,
+      rgba(0, 0, 0, 0.65) 100%
+    ),
+    radial-gradient(
+      900px 520px at 12% 46%,
+      rgba(255, 50, 50, 0.55) 0%,
+      rgba(255, 50, 50, 0) 62%
+    ),
+    radial-gradient(
+      880px 520px at 55% 40%,
+      rgba(255, 40, 40, 0.38) 0%,
+      rgba(255, 40, 40, 0) 66%
+    ),
+    radial-gradient(
+      900px 560px at 62% 92%,
+      rgba(255, 50, 50, 0.55) 0%,
+      rgba(255, 50, 50, 0) 60%
+    ),
+    radial-gradient(
+      720px 520px at 88% 54%,
+      rgba(80, 0, 0, 0.35) 0%,
+      rgba(80, 0, 0, 0) 70%
+    ),
+    linear-gradient(180deg, #4a0000 0%, #2b0000 45%, #400000 100%) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Hero Section */
+.education-hero {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.education-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(0, 0, 0, 0.7) 70%
+    ),
+    linear-gradient(135deg, rgba(140, 16, 7, 0.9), rgba(40, 0, 0, 0.9));
+  mix-blend-mode: multiply;
+}
+
+.education-hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #f9fafb;
+  padding: 2rem 1rem;
+}
+
+.education-hero-title {
+  font-size: 3.25rem;
+  letter-spacing: 0.4em;
+  text-indent: 0.4em;
+  font-weight: 800;
+  margin: 10 0 0.75rem 0;
+}
+
+.education-hero-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  max-width: 520px;
+  margin-inline: auto;
+  opacity: 0.85;
+}
+
+/* =============== TABS =============== */
+
+.education-tabs-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 1.5rem 0 1.5rem;
+}
+
+.education-tabs-inner {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.education-tabs {
+  display: inline-flex;
+  padding: 0.25rem;
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 9999px;
+  border: 1px solid rgba(248, 250, 252, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.education-tab-btn {
+  border: none;
+  padding: 0.6rem 1.6rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e5e7eb;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.education-tab-btn.active {
+  background: linear-gradient(135deg, #f97373, #ef4444);
+  color: #111827;
+  box-shadow: 0 10px 20px -10px rgba(248, 113, 113, 0.7);
+}
+
+.education-tab-btn:not(.active):hover {
+  color: #f9fafb;
+  background: rgba(248, 250, 252, 0.05);
+}
+
+.education-tabs-caption {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  opacity: 0.85;
+}
+
+/* =============== TAB CONTENT + ANIMASI SLIDE =============== */
+
+.education-tab-content-anggota .education-content {
+  animation: eduSlideInFromLeft 0.35s ease forwards;
+}
+
+.education-tab-content-deskripsi .education-content {
+  animation: eduSlideInFromRight 0.35s ease forwards;
+}
+
+@keyframes eduSlideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes eduSlideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =============== CONTENT WRAPPER =============== */
+
+.education-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4.5rem 1.5rem;
+}
+
+.education-manager-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem; /* jarak antar Manager & Assistant Manager */
+  flex-wrap: wrap; /* kalau di mobile boleh turun ke bawah */
+  margin-bottom: 3rem;
+}
+
+/* Section Staff */
+.education-section-title-wrapper {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.education-section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f9fafb;
+  margin: 0 0 0.3rem 0;
+}
+
+.education-section-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  opacity: 0.9;
+}
+
+/* Grid Staff */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2.2rem;
+  justify-items: center;
+}
+
+/* =============== CARD & FLIP =============== */
+
+.education-card {
+  width: 260px;
+  height: 400px;
+  perspective: 1200px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, margin-top 0.3s ease;
+}
+
+.education-card-manager {
+  width: 280px;
+  height: 420px;
+}
+
+.education-card:hover {
+  transform: translateY(-8px);
+}
+
+/* inner flip */
+.education-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.education-card.is-flipped .education-card-inner {
+  transform: rotateY(180deg);
+}
+
+.education-card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.15rem;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 16px 30px -14px rgba(0, 0, 0, 0.35);
+}
+
+/* FRONT */
+.education-card-front {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.education-image-wrapper {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.education-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.education-card:hover .education-image {
+  transform: scale(1.05);
+}
+
+.education-info {
+  padding: 1.2rem 1.2rem 1.4rem 1.2rem;
+  text-align: center;
+}
+
+.education-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.education-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #8c1007, #e62727);
+  color: #f9fafb;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.education-major {
+  color: #e5e7eb;
+  font-weight: 500;
+  margin: 0.15rem 0;
+  font-size: 0.9rem;
+}
+
+.education-year {
+  color: #d1d5db;
+  margin: 0.15rem 0 0 0;
+  font-size: 0.85rem;
+}
+
+/* BACK (quotes) */
+.education-card-back {
+  background: radial-gradient(
+    circle at 0% 0%,
+    #f97373 0%,
+    #7f1d1d 45%,
+    #111827 100%
+  );
+  color: #f9fafb;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-back-content {
+  padding: 1.7rem 1.5rem;
+  text-align: left;
+}
+
+.education-back-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin: 0 0 0.75rem 0;
+}
+
+.education-back-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+}
+
+.education-back-position {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0 0 1.1rem 0;
+}
+
+.education-back-quote {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0 0 1.1rem 0;
+}
+
+.education-back-footer {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* =============== DESKRIPSI JABATAN (Manager Education) =============== */
+
+.education-description {
+  border-radius: 1.5rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(248, 250, 252, 0.06);
+  box-shadow: 0 24px 55px -24px rgba(0, 0, 0, 0.9);
+  padding: 2rem 2rem 1.6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-description::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #f97373, #ef4444, #b91c1c);
+}
+
+.education-desc-row {
+  display: grid;
+  grid-template-columns: minmax(140px, 230px) minmax(0, 1fr);
+  column-gap: 2.5rem;
+  row-gap: 0.4rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.education-desc-row:last-child {
+  border-bottom: none;
+}
+
+.education-desc-role-col {
+  padding-left: 0.75rem;
+}
+
+.education-desc-role-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.education-desc-highlight {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  color: #fecaca;
+  opacity: 0.95;
+}
+
+.education-desc-text-col {
+  color: #e5e7eb;
+}
+
+.education-desc-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+.education-desc-row-1 {
+  padding-top: 0.9rem;
+}
+
+/* =============== RESPONSIVE =============== */
+
+@media (max-width: 1024px) {
+  .education-hero {
+    height: 280px;
+  }
+
+  .education-hero-title {
+    font-size: 2.6rem;
+    letter-spacing: 0.3em;
+  }
+
+  .education-content {
+    padding: 2.3rem 1.25rem 4rem 1.25rem;
+  }
+
+  .education-description {
+    padding-inline: 1.6rem;
+  }
+
+  .education-desc-row {
+    column-gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .education-hero {
+    height: 240px;
+  }
+
+  .education-hero-title {
+    font-size: 2rem;
+    letter-spacing: 0.25em;
+  }
+
+  .education-hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .education-tabs-wrapper {
+    padding-inline: 1.2rem;
+  }
+
+  .education-tabs-inner {
+    max-width: 100%;
+  }
+
+  .education-tabs {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .education-tab-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .education-manager-wrapper {
+    margin-bottom: 2.2rem;
+  }
+
+  .education-card,
+  .education-card-manager {
+    width: 100%;
+    max-width: 320px;
+    height: 380px;
+  }
+
+  .education-image-wrapper {
+    height: 220px;
+  }
+
+  .education-back-content {
+    padding: 1.6rem 1.4rem;
+  }
+
+  .education-back-quote {
+    font-size: 0.9rem;
+  }
+
+  .education-description {
+    padding: 1.6rem 1.4rem 1.4rem 1.4rem;
+  }
+
+  .education-desc-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.6rem;
+  }
+
+  .education-desc-role-col {
+    padding-left: 0.5rem;
+  }
+}
