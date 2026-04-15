@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Beranda />} />
+        <Route path="/WebsiteRnB" element={<Beranda />} />
         <Route path="/director" element={<Director />} />
         {/* Tambahkan route lainnya sesuai kebutuhan */}
         <Route path="/visi-misi" element={<Vimi />} />
