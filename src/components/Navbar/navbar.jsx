@@ -122,7 +122,7 @@ const Navbar = () => {
 
     const informasiPaths = ["/beasiswa", "/lomba", "/press-release"];
 
-    if (path === "/WebsiteRnB") {
+    if (path === "/") {
       setActiveMenu("beranda");
     } else if (profilPaths.includes(path)) {
       setActiveMenu("profil");
